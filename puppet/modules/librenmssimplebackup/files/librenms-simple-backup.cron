@@ -1,0 +1,1 @@
+55 3 * * * root /usr/local/bin/librenms-simple-backup.sh >/dev/null 2>&1

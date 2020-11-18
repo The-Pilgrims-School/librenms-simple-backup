@@ -10,6 +10,8 @@ BACKUP_STORAGE=/var/backups/librenms
 DATE=$(date +%Y-%m-%d-%H-%M-%S)
 KEEP=7
 
+cd $BACKUP_SOURCE
+
 # load configuration
 . /etc/librenms-simple-backup.conf
 

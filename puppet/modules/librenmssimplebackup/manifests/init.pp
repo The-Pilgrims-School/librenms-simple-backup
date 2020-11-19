@@ -23,12 +23,20 @@ class librenmssimplebackup {
     source => ('puppet:///modules/librenmssimplebackup/librenms-simple-backup.sh')
   }
 
-  file { '/etc/cron.d/librenms-simple-backup':
+  # file { '/etc/cron.d/librenms-simple-backup':
+  #   ensure => file,
+  #   owner  => 'root',
+  #   group  => 'root',
+  #   mode   => '0644',
+  #   source => ('puppet:///modules/librenmssimplebackup/librenms-simple-backup.cron')
+  # }
+
+  file { '/etc/cron.daily/librenms-simple-backup':
     ensure => file,
     owner  => 'root',
     group  => 'root',
-    mode   => '0644',
-    source => ('puppet:///modules/librenmssimplebackup/librenms-simple-backup.cron')
+    mode   => '0755',
+    source => ('puppet:///modules/librenmssimplebackup/librenms-simple-backup.sh')   
   }
 
 }
